@@ -1,0 +1,31 @@
+<template name="TEMPLATE_NAME">
+		<h3 data-intro="This is the start of the tour" id="tour1">
+			COMPONENT_TITLE
+			{{#if isFile}}
+				<button type="submit" class="btn btn-success pull-right file-save" id="tour2">
+					<span class="fa fa-save">
+					</span>
+					Save
+				</button>
+			{{/if}}
+		</h3>
+    <div class="row row-editor">
+			{{#if isFile}}
+        <div class="col-md-6">
+            {{> CodeMirror id="markdown-editor" options=editorOptions reactiveVar="editorText"}}
+        </div>
+
+        <div class="col-md-6 full-height">
+{{#markdown}}
+{{editorText}}
+{{/markdown}}
+        </div>
+			{{/if}}
+    </div>
+<button 
+	class="btn btn-success pull-right tour" 
+	id="tour3"
+	data-intro="This is probably the second stop on the tour">
+		Tour
+</button>
+</template>
